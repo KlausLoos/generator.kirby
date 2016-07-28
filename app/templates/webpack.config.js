@@ -1,23 +1,22 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname + '/../app/assets',
+  context: __dirname + '/assets',
   entry: {
     //'vendor': ['angular','angular-filter', 'jquery', 'tether', 'bootstrap'],
-    'vendor': ['react', 'react-dom', 'react-redux', 'react-router', 'redux','jquery', 'tether', 'bootstrap'],
+    'vendor': ['react', 'react-dom', 'react-redux', 'react-router', 'redux','jquery', 'tether'],
     'scripts': './js/scripts.js',
-    'app': ['./js/App.jsx', './css/style.css']
+    'app': ['./jsx/ListApp.jsx', './jsx/FilterApp.jsx']
   },
 
   output: {
-    path: './app/assets/js',
+    path: './assets/js',
     filename: '[name].bundle.js'
   },
 
   resolve: {
-    extensions: ['', '.js', 'jsx', '.ts', '.css']
+    extensions: ['', '.js', '.jsx', '.ts']
   },
 
   module: {
@@ -32,24 +31,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        loaders: ["style-loader", "css-loader", "postcss-loader"]
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'react-hot!babel',
-        presets: ['react', 'es2015']
+        loaders: ['react-hot', 'babel-loader']
       }
     ]
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js", Infinity),
-
-    new ExtractTextPlugin("appcss", "../css/style.bundle.css"),
-
     new webpack.ProvidePlugin({$: "jquery", jQuery: 'jquery', "window.Tether": 'tether', "Tether": 'tether'})
-
   ],
 
   displaymodules: true,

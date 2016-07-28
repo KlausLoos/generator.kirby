@@ -37,3 +37,6 @@
       </div>
     </nav>
   </header>
+
+  <div id="list"></div>
+  <div id="filter"></div>

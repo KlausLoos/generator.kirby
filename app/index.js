@@ -90,7 +90,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     console.log('Cloning Kirby plainkit');
 
     //clone repo
-    child = exec('git clone --recursive https://github.com/getkirby/plainkit ' + root+"/app",
+    child = exec('git clone --recursive https://github.com/getkirby/plainkit ' + root,
       function (error){
         if (error !== null) {
           console.log("CloneKirby Error:", error);
@@ -104,7 +104,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
     console.log('Initializing submodule Uniform');
 
-    child = exec('cd '+id+'.kirby/app && git submodule add https://github.com/mzur/kirby-uniform.git site/plugins/uniform',
+    child = exec('cd '+id+'.kirby && git submodule add https://github.com/mzur/kirby-uniform.git site/plugins/uniform',
       function (error){
         if (error !== null) {
           console.log("CloneUniform Error:", error);
@@ -118,7 +118,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
     console.log('Initializing submodule Kirby ');
 
-    child = exec('cd '+id+'.kirby/app && rm -rf kirby && git rm --cached -r kirby && git submodule add --force https://github.com/getkirby/kirby.git',
+    child = exec('cd '+id+'.kirby && rm -rf kirby && git rm --cached -r kirby && git submodule add --force https://github.com/getkirby/kirby.git',
       function (error){
         if (error !== null) {
           console.log("CloneUniform Error:", error);
@@ -132,7 +132,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
     console.log('Initializing submodule Panel');
 
-    child = exec('cd '+id+'.kirby/app && rm -rf panel && git rm --cached -r panel && git submodule add --force https://github.com/getkirby/panel.git',
+    child = exec('cd '+id+'.kirby && rm -rf panel && git rm --cached -r panel && git submodule add --force https://github.com/getkirby/panel.git',
       function (error){
         if (error !== null) {
           console.log("CloneUniform Error:", error);
@@ -146,7 +146,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
     console.log('Updating Submodules');
 
-    child = exec('cd '+id+'.kirby/app && git submodule update --init --recursive',
+    child = exec('cd '+id+'.kirby && git submodule update --init --recursive',
       function (error){
         if (error !== null) {
           console.log("CloneUniform Error:", error);
@@ -159,7 +159,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     // Make sure this runs synchronously
     var done = this.async();
 
-    child = exec('rm ./' + root + '/app/site/config/config.php ./' + root + '/app/content/site.txt ./' + root + '/app/site/blueprints/default.yml ./' + root + '/app/site/templates/default.php ./' + root + '/app/site/snippets/header.php ./' + root + '/app/site/snippets/footer.php' ,
+    child = exec('rm ./' + root + '/site/config/config.php ./' + root + '/content/site.txt ./' + root + '/site/blueprints/default.yml ./' + root + '/site/templates/default.php ./' + root + '/site/snippets/header.php ./' + root + '/site/snippets/footer.php' ,
       function (error){
         if(error !==null ){
           console.log(error);
@@ -237,7 +237,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
     console.log('First Commit');
 
-    child = exec('cd '+id+'.kirby/app && git add . && git commit -m "first commit"',
+    child = exec('cd '+id+'.kirby && git add . && git commit -m "first commit"',
       function (error){
         if (error !== null) {
           console.log("CloneUniform Error:", error);
@@ -250,7 +250,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     // Make sure this runs synchronously
     var done = this.async();
 
-    child = exec('gittower '+id+'.kirby/app && cd '+id+'.kirby',
+    child = exec('gittower '+id+'.kirby && cd '+id+'.kirby',
       function (error){
         if(error !==null ){
           console.log(error);
