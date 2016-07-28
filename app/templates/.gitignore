@@ -1,0 +1,8 @@
+.DS_Store
+
+app/site/accounts
+app/assets/avatars
+app/thumbs/*
+.sass-cache
+components
+node_modules

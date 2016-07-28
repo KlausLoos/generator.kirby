@@ -1,0 +1,23 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery.validate": "~1.13.0",
+    "bootstrap":"https://github.com/twbs/bootstrap.git#v4-dev",
+    "bootstrap-sass": "*",
+    "modernizr": "*"
+  },
+  "homepage": "https://github.com/getkirby/starterkit",
+  "authors": [
+    "Bram Loosveld <bramloosveld@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components",
+    "test",
+    "tests"
+  ]
+}

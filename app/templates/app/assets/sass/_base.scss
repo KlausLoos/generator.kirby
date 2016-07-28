@@ -1,0 +1,59 @@
+﻿html, body{
+  font-size: 62.5%;
+}
+
+a {
+
+}
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+hr{
+
+}
+
+p{
+  font-size: 1.4rem; //14px
+}
+
+a{
+
+}
+
+.uniform__potty {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 54.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

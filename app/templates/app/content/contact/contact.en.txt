@@ -1,0 +1,29 @@
+Title: Contact
+
+----
+
+Text: This page is still under construction.
+
+----
+
+first_name: First Name
+
+----
+
+family_name: Family Name
+
+----
+
+company: Company Name
+
+----
+
+email: E-mail Address
+
+----
+
+tel: TEL
+
+----
+
+message: Message
