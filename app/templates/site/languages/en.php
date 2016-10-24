@@ -1,5 +1,13 @@
 <?php
 
+l::set('first-name', 'First Name');
+l::set('family-name', 'Family Name');
+l::set('company', 'Company');
+l::set('email', 'E-mail');
+l::set('tel', 'Telephone');
+l::set('message', 'Message');
+l::set('submit', 'Submit');
+
 l::set('uniform-filled-potty', 'The form field that is supposed to be empty was filled. In case you are not a spam-bot, please try again leaving the field blank.');
 l::set('uniform-fields-required', 'Please fill in all required fields.');
 l::set('uniform-fields-not-valid', 'Some fields do not contain valid data.');

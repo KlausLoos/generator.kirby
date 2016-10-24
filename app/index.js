@@ -9,7 +9,7 @@ var util = require('util'),
   child;
 
 // Bcrypt
-//var bcrypt = require('bcrypt');
+// var bcrypt = require('bcrypt');
 
 // These variables need to be global
 var root = 'site', kirbyPanel, root, kirbyBlog, kirbyContactForm;
@@ -60,7 +60,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     //Prompt the user for the folder to set up kirby
     this.prompt(prompt, function (props){
       id = props.root;
-      root = props.root+".kirby";
+      root = props.root+'.kirby';
       done();
     }.bind(this));
   },
@@ -93,7 +93,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('git clone --recursive https://github.com/getkirby/plainkit ' + root,
       function (error){
         if (error !== null) {
-          console.log("CloneKirby Error:", error);
+          console.log('CloneKirby Error:', error);
         }
         done();
       }.bind(this));
@@ -107,7 +107,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('cd '+id+'.kirby && git submodule add https://github.com/mzur/kirby-uniform.git site/plugins/uniform',
       function (error){
         if (error !== null) {
-          console.log("CloneUniform Error:", error);
+          console.log('CloneUniform Error:', error);
         }
         done();
       }.bind(this));
@@ -121,7 +121,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('cd '+id+'.kirby && rm -rf kirby && git rm --cached -r kirby && git submodule add --force https://github.com/getkirby/kirby.git',
       function (error){
         if (error !== null) {
-          console.log("CloneUniform Error:", error);
+          console.log('CloneUniform Error:', error);
         }
         done();
       }.bind(this));
@@ -135,7 +135,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('cd '+id+'.kirby && rm -rf panel && git rm --cached -r panel && git submodule add --force https://github.com/getkirby/panel.git',
       function (error){
         if (error !== null) {
-          console.log("CloneUniform Error:", error);
+          console.log('CloneUniform Error:', error);
         }
         done();
       }.bind(this));
@@ -149,7 +149,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('cd '+id+'.kirby && git submodule update --init --recursive',
       function (error){
         if (error !== null) {
-          console.log("CloneUniform Error:", error);
+          console.log('CloneUniform Error:', error);
         }
         done();
       }.bind(this));
@@ -170,28 +170,28 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
 
   setupQuestions: function(){
      // Make sure this runs synchronously
-     var done = this.async();
+    var done = this.async();
 
-     var prompts = [{
+    var prompts = [{
       name: 'licenseKey',
       message: 'License Key:'
-     }, {
+    }, {
       name: 'siteTitle',
       message:'Site Name:',
       default: id
-     }, {
+    }, {
       name: 'siteAuthor',
       message:'Site Author:',
       default: 'Bram Loosveld'
-     }, {
+    }, {
       name: 'siteDescription',
       message:'Site Description:',
       default: ''
-     }, {
+    }, {
       name: 'siteKeywords',
       message:'Site Keywords:',
       default: ''
-     }, {
+    }, {
       name: 'panelUsername',
       message:'User Name:',
       default: 'admin'
@@ -226,9 +226,9 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
   runNpm: function(){
     var done = this.async();
     console.log('Installing npm Dependencies')
-    this.npmInstall("--prefix "+root, function(){
-        console.log("\nEverything Setup !!!\n");
-        done();
+    this.npmInstall('--prefix '+root, function(){
+      console.log('\nEverything Setup !!!\n');
+      done();
     });
   },
 
@@ -240,7 +240,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     child = exec('cd '+id+'.kirby && git add . && git commit -m "first commit"',
       function (error){
         if (error !== null) {
-          console.log("CloneUniform Error:", error);
+          console.log('CloneUniform Error:', error);
         }
         done();
       }.bind(this));

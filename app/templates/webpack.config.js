@@ -7,7 +7,7 @@ module.exports = {
     //'vendor': ['angular','angular-filter', 'jquery', 'tether', 'bootstrap'],
     'vendor': ['react', 'react-dom', 'react-redux', 'react-router', 'redux','jquery', 'tether'],
     'scripts': './js/scripts.js',
-    'app': ['./jsx/ListApp.jsx', './jsx/FilterApp.jsx']
+    'app': ['./react/ListApp.js', './react/FilterApp.js']
   },
 
   output: {
@@ -16,7 +16,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.ts']
+    extensions: ['', '.js', '.ts']
   },
 
   module: {
@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ["style-loader", "css-loader", "postcss-loader"]
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.jsx?$/,
@@ -42,8 +42,8 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js", Infinity),
-    new webpack.ProvidePlugin({$: "jquery", jQuery: 'jquery', "window.Tether": 'tether', "Tether": 'tether'})
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js', Infinity),
+    new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery', 'window.Tether': 'tether', 'Tether': 'tether'})
   ],
 
   displaymodules: true,

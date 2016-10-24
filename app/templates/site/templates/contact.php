@@ -6,6 +6,12 @@
 
         <div class="col-sm-6 col-sm-offset-2">
 
+          <?php if ($form->hasMessage()): ?>
+            <div class="alert <?php e($form->successful(), 'alert-success' , 'alert-warning')?>">
+              <?php $form->echoMessage() ?>
+            </div>
+          <?php endif; ?>
+
           <form action="<?php echo $page->url()?>" method="post">
 
             <div class="row">
@@ -19,11 +25,6 @@
                 <input class="form-control" type="text" name="family_name" id="family_name" value="<?php $form->echoValue('family_name') ?>" required/>
               </div>
 
-            </div>
-
-            <div class="form-group required <?php e($form->hasError('company'), 'has-error')?>">
-              <label for="company"><?php echo l::get('company'); ?></label>
-              <input class="form-control" type="text" name="company" id="company" value="<?php $form->echoValue('company') ?>" required/>
             </div>
 
             <div class="row">
@@ -42,14 +43,14 @@
 
             <div class="form-group required">
               <label for="message"><?php echo l::get('message'); ?></label>
-              <textarea name="message" id="message" class="form-control"><?php $form->echoValue('message') ?></textarea>
+              <textarea name="message" rows="10" id="message" class="form-control"><?php $form->echoValue('message') ?></textarea>
             </div>
 
             <label class="uniform__potty" for="website">Please leave this field blank</label>
             <input type="text" name="website" id="website" class="uniform__potty" />
 
             <?php if ($form->hasMessage()): ?>
-            <div class="message <?php e($form->successful(), 'success' , 'error')?>">
+            <div class="alert <?php e($form->successful(), 'alert-success' , 'alert-warning')?>">
               <?php $form->echoMessage() ?>
             </div>
             <?php endif; ?>

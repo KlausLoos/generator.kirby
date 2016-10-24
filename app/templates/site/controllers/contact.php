@@ -16,8 +16,13 @@ return function($site, $pages, $page) {
            array(
               '_action' => 'email',
               'to'      => 'bramloosveld@gmail.com',
-              'sender'  => $site->email(),
-              'subject' =>  'MSE-Europe website: new contact'
+              'sender'  => 'info@blabla.be', //make sure sender exist with postmark sender
+              'subject' => 'Website: new contact',
+              'snippet' => 'uniform-template',
+              'service' => 'postmark',
+              'service-options' => array(
+                'key'    => '48892dab-eba2-4828-acfc-b0d18b42d551'
+              )
            )
         )
      )

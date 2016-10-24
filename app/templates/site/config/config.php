@@ -3,10 +3,6 @@
 // custom config
 c::set('date.handler', 'strftime');
 
-c::set('email.use', 'mailgun');
-c::set('email.postmark.key', 'key-193926a4547bba90bcc02b3042c57f20');
-c::set('email.postmark.host', 'sandbox1103974c6b9f47e1afdf7bff83ae8603.mailgun.org');
-
 // direct access protection
 if(!defined('KIRBY')) die('Direct access is not allowed');
 

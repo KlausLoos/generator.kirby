@@ -17,7 +17,7 @@
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Fjalla+One|Droid+Serif' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="/assets/css/style.bundle.css">
+  <link rel="stylesheet" href="/assets/css/style.bundle.css?v=<?php echo date('YmdHi');?>">
 
 </head>
 
