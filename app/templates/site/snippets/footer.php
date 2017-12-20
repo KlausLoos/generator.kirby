@@ -1,19 +1,36 @@
   <footer>
-    <div class="container">
-      <img src="/assets/images/logos.png" width="150px">
+    <div class="max-width-4">
+      © <?php echo date('Y'); ?> <?php echo $site->copyright(); ?>
     </div>
   </footer>
 
-  <script type="text/javascript" src="/assets/js/vendor.bundle.js"></script>
-  <script type="text/javascript" src="/assets/js/app.bundle.js"></script>
-  <script type="text/javascript" src="/assets/js/scripts.bundle.js"></script>
+  <?php echo js(array(
+    '//use.fontawesome.com/releases/v5.0.1/js/all.js',
+    '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.js',
+    '/assets/js/main.bundle.js?v='.date('YmdHi'),
+  )); ?>
 
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-  <script type="text/javascript">
-      window.cookieconsent_options = {'message':'<?php echo $site->cookie(); ?>','dismiss':'Akkoord','learnMore':'More info','link':null,'theme':'dark-bottom'};
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#eaf7f7",
+        "text": "#5c7291"
+      },
+      "button": {
+        "background": "#56cbdb",
+        "text": "#ffffff"
+      }
+    },
+    "theme": "edgeless",
+    "position": "bottom-left",
+    "content": {
+      "message": '<?php echo $site->cookie(); ?>',
+    }
+  })});
   </script>
-
+  
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -1,7 +1,8 @@
-<ul class="nav navbar-nav pull-sm-right collapse navbar-toggleable-xs" id="navbar"  >
+<ul class="block-nav list-reset m0">
   <?php foreach($pages->visible() as $p): ?>
-  <li class="nav-item <?php echo $p->id(); ?> <?php e($p->isOpen(), ' active') ?>">
-    <a class="nav-link" href="/<?php echo $p->uri() ?>"><?php echo $p->title()->html() ?></a>
+  <li class="inline-block ml4 sm-hide xs-hide <?php echo $p->id(); ?>">
+    <a class="<?php e($p->isOpen(), ' active') ?>" href="/<?php echo $p->uri() ?>"><?php echo $p->title()->html() ?></a>
   </li>
   <?php endforeach ?>
+  <li class="inline-block md-hide lg-hide" id="mobile-menu"><span class="open"><span class="hamburger"></span><span class="close"></span></li>
 </ul>

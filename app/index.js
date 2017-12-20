@@ -65,23 +65,6 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  // //NPM Boilerplate
-  // cloneNPM: function(){
-  //   // Make sure this runs synchronously
-  //   var done = this.async();
-
-  //   console.log('Cloning NPM boilerplate');
-
-  //   //clone repo
-  //   child = exec('git clone https://loosveld@bitbucket.org/loosveld/npm-boilerplate.git '+id+'.kirby && cd '+id+'.kirby && rm -rf .git',
-  //     function (error){
-  //       if (error !== null) {
-  //         console.log("CloneNPM Error:", error);
-  //       }
-  //       done();
-  //     }.bind(this));
-  // },
-
   //get latest repository of Kirby, in this case we are using 2.0
   cloneKirby: function(){
     // Make sure this runs synchronously
@@ -159,7 +142,9 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     // Make sure this runs synchronously
     var done = this.async();
 
-    child = exec('rm ./' + root + '/site/config/config.php ./' + root + '/content/site.txt ./' + root + '/site/blueprints/default.yml ./' + root + '/site/templates/default.php ./' + root + '/site/snippets/header.php ./' + root + '/site/snippets/footer.php' ,
+    console.log('Remove Extraneous Files');
+
+    child = exec('rm ./' + root + '/site/config/config.php ./' + root + '/content/site.txt ./' + root + '/site/blueprints/default.yml ./' + root + '/site/templates/default.php ./' + root + '/site/snippets/header.php ./' + root + '/site/snippets/footer.php ./' + root + '/*.md ./' + root + '/.gitignore' ,
       function (error){
         if(error !==null ){
           console.log(error);
@@ -232,6 +217,34 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
     });
   },
 
+  // initGitIgnore: function(){
+  //   var done = this.async();
+
+  //   console.log('Init Gitignore');
+
+  //   child = exec('mv ./' + root + '/.npmignore ./' + root + '/.gitignore',
+  //     function (error){
+  //       if (error !== null) {
+  //         console.log('CloneUniform Error:', error);
+  //       }
+  //       done();
+  //     }.bind(this));
+  // },
+
+  itermocil: function(){
+    var done = this.async();
+
+    console.log('Init Itermocil');
+
+    child = exec('cp ~/teamocil/distridi.yml ~/teamocil/new.yml',
+      function (error){
+        if (error !== null) {
+          console.log('CloneUniform Error:', error);
+        }
+        done();
+      }.bind(this));
+  },
+
   firstCommit: function(){
     var done = this.async();
 
@@ -262,7 +275,7 @@ var mlkshkKirbyGenerator = yeoman.generators.Base.extend({
   finish: function () {
     // Give the user info on how to start developing
     var howToInstall =
-    'Nice! Now run ' + chalk.magenta('cd ' + root + '/') + '.';
+    'Nice! Now run ' + chalk.magenta('itermocil ' + root) + '.';
     console.log(howToInstall);
   }
 });

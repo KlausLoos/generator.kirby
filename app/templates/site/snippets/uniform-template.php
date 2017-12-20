@@ -1,9 +1,9 @@
 <?php
 
 foreach ($form as $field => $value) {
-  if (str::startsWith($field, '_')) {
-    continue;
-  }
+  // if (str::startsWith($field, '_')) {
+  //   continue;
+  // }
 
   if (is_array($value)) {
     $value = implode(', ', array_filter($value, function ($i) {
@@ -11,5 +11,5 @@ foreach ($form as $field => $value) {
     }));
   }
 
-  echo ucfirst($field).': '.$value."\n";
+  echo '<b>'.ucfirst($field).'</b>: '.$value."<br/>";
 }

@@ -1,0 +1,85 @@
+.block-nav.mobile {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.block-nav.mobile li {
+  text-align: center;
+  margin: 1rem 0;
+  display: block;
+}
+
+.block-nav #mobile-menu {
+  cursor: pointer;
+}
+
+.block-nav #mobile-menu .open {
+  position: fixed;
+  width: 2.5em;
+  height: 2em;
+  top: 32px;
+  right: 32px;
+}
+
+.block-nav #mobile-menu .open .hamburger {
+  content: " ";
+  position: absolute;
+  width: 2.5em;
+  height: 0.4em;
+  background: white;
+  box-shadow:
+    0 0.8em 0 0 white,
+    0 1.6em 0 0 white;
+}
+
+.block-nav.mobile #mobile-menu .open {
+  display: none;
+}
+
+.block-nav #mobile-menu .close {
+  display: none;
+}
+
+.block-nav.mobile li{
+  display: inline !important
+}
+
+.block-nav.mobile #mobile-menu .close {
+  display: block;
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+
+.block-nav.mobile #mobile-menu .close:hover {
+  opacity: 1;
+}
+
+.block-nav.mobile #mobile-menu .close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+
+.block-nav.mobile #mobile-menu .close:before {
+  transform: rotate(45deg);
+}
+
+.block-nav.mobile #mobile-menu .close:after {
+  transform: rotate(-45deg);
+}

@@ -27,4 +27,4 @@ fields:
     width: 1/2
   copyright:
     label: Copyright
-    type:  textarea
+    type:  text

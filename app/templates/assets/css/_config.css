@@ -1,0 +1,20 @@
+:root {
+  --gray-darker: color(#000 alpha(-13.5%));
+  --gray-dark: color(#000 alpha(-20%));
+  --gray: color(#000 alpha(-33.5%));
+  --gray-light: color(#000 alpha(-60%));
+  --gray-lighter: color(#000 alpha(-93.5%));
+
+  --blue: #009dd8;
+  --blue-dark: #004159;
+  --green: #92c126;
+  --green-light: #aae44d;
+  --orange: #f88518;
+  --orange-light: #aae44d;
+  --yellow: yellow;
+}
+
+@font-face {
+  font-family: 'Abadi';
+  src: url('../fonts/ABALC.ttf') format('truetype'), url('../fonts/ABALC.woff') format('woff');
+}

@@ -16,7 +16,7 @@ return function($site, $pages, $page) {
            array(
               '_action' => 'email',
               'to'      => 'bramloosveld@gmail.com',
-              'sender'  => 'info@blabla.be', //make sure sender exist with postmark sender
+              'sender'  => 'info@blabla.be', //make sure sender exist with postmark sender & is verified
               'subject' => 'Website: new contact',
               'snippet' => 'uniform-template',
               'service' => 'postmark',

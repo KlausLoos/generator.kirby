@@ -1,10 +1,8 @@
 <?php snippet('header'); ?>
 
-<main>
-  <div class="container">
-    <div class="row">
-
-    </div>
+<main class="mb4 mt4">
+  <div class="mx-auto max-width-4">
+    <h1><?php echo $page->title(); ?></h1>
   </div>
 </main>
 

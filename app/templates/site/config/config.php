@@ -24,7 +24,7 @@ http://getkirby.com/license
 
 */
 
-c::set('license', '<%= licenseKey %>');
+c::set('license', '');
 
 
 /*
@@ -301,7 +301,7 @@ go to your homepage afterwards to display it on refresh.
 
 */
 
-c::set('troubleshoot', false);
+c::set('troubleshoot', true);
 
 
 /*
