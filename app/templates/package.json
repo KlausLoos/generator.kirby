@@ -15,17 +15,24 @@
     }
   },
   "scripts": {
-    "key": "scp ~/.ssh/id_rsa.pub $npm_package_config_remote_production_user@$npm_package_config_remote_production_host:/customers/9/b/4/heppiekidzz.be/httpd.private/.ssh/authorized_keys",
+    "gittower": "gittower <%= id %>.kirby",
+    "key":
+      "scp ~/.ssh/id_rsa.pub $npm_package_config_remote_production_user@$npm_package_config_remote_production_host:/customers/9/b/4/heppiekidzz.be/httpd.private/.ssh/authorized_keys",
     "clean": "echo '=> clean dist folder' && rm -rf dist",
-    "copy": "echo '=> copy files 2 dist' && rsync -a --delete ./ dist --exclude /.gitignore --exclude /.gitmodules --exclude /.npmignore --exclude /bs-config.js --exclude /sftp-config.json --exclude /webpack.dev.js --exclude /webpack.prod.js --exclude /node_modules --exclude /dist --exclude /.git --exclude /postcss.config.js --exclude /assets/js/scripts.js",
+    "copy":
+      "echo '=> copy files 2 dist' && rsync -a --delete ./ dist --exclude /.gitignore --exclude /.gitmodules --exclude /.npmignore --exclude /bs-config.js --exclude /sftp-config.json --exclude /webpack.dev.js --exclude /webpack.prod.js --exclude /node_modules --exclude /dist --exclude /.git --exclude /postcss.config.js --exclude /assets/js/scripts.js",
     "imagemin": "echo '=> imagemin' && imagemin assets/images dist/assets/images -p",
     "php": "php -S 127.0.0.1:9062 >& /dev/null",
     "browser-sync": "browser-sync start --config bs-config.js",
-    "sync:content": "echo '=> sync:content' && rsync -va --delete --progress --update $npm_package_config_remote_staging_user@$npm_package_config_remote_staging_host:$npm_package_config_remote_staging_path/content/ content",
-    "sync:2staging": "rsync -va --delete --progress --update dist/ $npm_package_config_remote_staging_user@$npm_package_config_remote_staging_host:$npm_package_config_remote_staging_path/",
-    "sync:2production": "rsync -va --delete --progress --update dist/ $npm_package_config_remote_production_user@$npm_package_config_remote_production_host:$npm_package_config_remote_production_path/",
+    "sync:content":
+      "echo '=> sync:content' && rsync -va --delete --progress --update $npm_package_config_remote_staging_user@$npm_package_config_remote_staging_host:$npm_package_config_remote_staging_path/content/ content",
+    "sync:2staging":
+      "rsync -va --delete --progress --update dist/ $npm_package_config_remote_staging_user@$npm_package_config_remote_staging_host:$npm_package_config_remote_staging_path/",
+    "sync:2production":
+      "rsync -va --delete --progress --update dist/ $npm_package_config_remote_production_user@$npm_package_config_remote_production_host:$npm_package_config_remote_production_path/",
     "build:css": "postcss assets/css/_main.css -o assets/css/style.css -w",
-    "build:css:production": "postcss assets/css/_main.css -o dist/assets/css/style.css -e production",
+    "build:css:production":
+      "postcss assets/css/_main.css -o dist/assets/css/style.css -e production",
     "webpack": "webpack --config webpack.dev.js -w",
     "webpack:production": "webpack --config webpack.prod.js",
     "serve": "npm-run-all -p php browser-sync webpack build:css",
