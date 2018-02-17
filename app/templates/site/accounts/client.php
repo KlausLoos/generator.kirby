@@ -3,7 +3,7 @@
 username: client
 firstname:
 lastname:
-email: bramloosveld@gmail.com
+email: klaus.loosveld@gmail.com
 password: >
   $2a$10$4iFkcAe5PYrBd45nRzRta.oEwmheW9ISHwYlkgJp6tZsNQpSJpZKi
 language: en

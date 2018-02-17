@@ -1,7 +1,7 @@
-<?php if(!defined('KIRBY')) exit ?>
-
-title: Home
-pages: false
+title: Page
+pages: true
+files: true
+  sortable: true
 fields:
   title:
     label: Title
@@ -9,4 +9,3 @@ fields:
   text:
     label: Text
     type:  textarea
-    size:  large
